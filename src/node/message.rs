@@ -81,7 +81,7 @@ impl<const N: usize> Message<N> {
         vec
     }
     pub fn from_slice(slice: &[u8]) -> Option<Self> {
-        let from = (*slice.get(0)?).into();
+        let from = (*slice.first()?).into();
         let to = (*slice.get(1)?).into();
         let command = (*slice.get(2)?).into();
         let payload = Vec::from_slice(slice.get(3..)?).ok()?;

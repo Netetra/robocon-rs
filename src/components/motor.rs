@@ -27,7 +27,11 @@ pub enum Dir {
 impl Not for Dir {
     type Output = Self;
     fn not(self) -> Self::Output {
-        if self == Dir::Cw { Dir::Ccw } else { Dir::Cw }
+        if self == Dir::Cw {
+            Dir::Ccw
+        } else {
+            Dir::Cw
+        }
     }
 }
 
