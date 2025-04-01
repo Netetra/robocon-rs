@@ -115,7 +115,11 @@ impl Gamepad {
         ]
     }
     pub fn reset(&mut self) {
+        self.left_joystick = (0, 0);
+        self.right_joystick = (0, 0);
         self.buttons = Buttons::default();
+        self.left_trigger = 0;
+        self.right_trigger = 0;
         self.dpad = Dpad::default();
     }
     pub fn update(&mut self, new_state: &Gamepad) {
@@ -193,6 +197,8 @@ impl Gamepad {
 
         self.left_joystick = new_state.left_joystick;
         self.right_joystick = new_state.right_joystick;
+        self.left_trigger = new_state.left_trigger;
+        self.right_trigger = new_state.right_trigger;
     }
 
     pub fn left_joystick(&self) -> (i8, i8) {
