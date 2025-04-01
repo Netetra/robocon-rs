@@ -10,9 +10,12 @@ embedded-can = "0.4.1"
 embedded-io-async = "0.6.1"
 heapless = "0.8.0"
 micromath = "2.1.0"
-num_enum = "0.7.3"
+
+
+[dependencies.num_enum]
+version = "0.7.3"
+default-features = false
 
 [dependencies.nom]
 version = "7"
 default-features = false
-features = []
