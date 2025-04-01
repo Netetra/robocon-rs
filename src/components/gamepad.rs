@@ -88,23 +88,32 @@ impl From<&[u8; 9]> for Gamepad {
 
 impl From<Gamepad> for [u8; 9] {
     fn from(value: Gamepad) -> Self {
-        let raw_buttons: u16 = value.buttons.into();
-        let buttons_bytes = raw_buttons.to_be_bytes();
-        [
-            value.left_joystick.0 as u8,
-            value.left_joystick.1 as u8,
-            value.right_joystick.0 as u8,
-            value.right_joystick.1 as u8,
-            buttons_bytes[0],
-            buttons_bytes[1],
-            value.left_trigger,
-            value.right_trigger,
-            value.dpad.into(),
-        ]
+        value.into_array()
+    }
+}
+
+impl From<&Gamepad> for [u8; 9] {
+    fn from(value: &Gamepad) -> Self {
+        value.into_array()
     }
 }
 
 impl Gamepad {
+    pub fn into_array(&self) -> [u8; 9] {
+        let raw_buttons: u16 = self.buttons.into();
+        let buttons_bytes = raw_buttons.to_be_bytes();
+        [
+            self.left_joystick.0 as u8,
+            self.left_joystick.1 as u8,
+            self.right_joystick.0 as u8,
+            self.right_joystick.1 as u8,
+            buttons_bytes[0],
+            buttons_bytes[1],
+            self.left_trigger,
+            self.right_trigger,
+            self.dpad.into(),
+        ]
+    }
     pub fn reset(&mut self) {
         self.buttons = Buttons::default();
         self.dpad = Dpad::default();
