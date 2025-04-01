@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 bit_field = "0.10.2"
-bitfield-struct = "0.10.1"
+bitfield-struct = "0.9.5"
 embedded-can = "0.4.1"
 embedded-io-async = "0.6.1"
 heapless = "0.8.0"
