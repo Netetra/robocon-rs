@@ -420,7 +420,7 @@ impl Gamepad {
             self.flags.set_is_circle_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_cross_pushed(&mut self) -> bool {
@@ -428,7 +428,7 @@ impl Gamepad {
             self.flags.set_is_cross_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_triangle_pushed(&mut self) -> bool {
@@ -436,7 +436,7 @@ impl Gamepad {
             self.flags.set_is_triangle_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_square_pushed(&mut self) -> bool {
@@ -444,7 +444,7 @@ impl Gamepad {
             self.flags.set_is_square_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_up_pushed(&mut self) -> bool {
@@ -452,7 +452,7 @@ impl Gamepad {
             self.flags.set_is_up_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_down_pushed(&mut self) -> bool {
@@ -460,7 +460,7 @@ impl Gamepad {
             self.flags.set_is_down_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_left_pushed(&mut self) -> bool {
@@ -468,7 +468,7 @@ impl Gamepad {
             self.flags.set_is_left_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_right_pushed(&mut self) -> bool {
@@ -476,7 +476,7 @@ impl Gamepad {
             self.flags.set_is_right_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_l1_pushed(&mut self) -> bool {
@@ -484,7 +484,7 @@ impl Gamepad {
             self.flags.set_is_l1_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_r1_pushed(&mut self) -> bool {
@@ -492,7 +492,7 @@ impl Gamepad {
             self.flags.set_is_r1_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_l2_pushed(&mut self) -> bool {
@@ -500,7 +500,7 @@ impl Gamepad {
             self.flags.set_is_l2_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_r2_pushed(&mut self) -> bool {
@@ -508,7 +508,7 @@ impl Gamepad {
             self.flags.set_is_r2_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_l3_pushed(&mut self) -> bool {
@@ -516,7 +516,7 @@ impl Gamepad {
             self.flags.set_is_l3_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_r3_pushed(&mut self) -> bool {
@@ -524,7 +524,7 @@ impl Gamepad {
             self.flags.set_is_r3_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_select_pushed(&mut self) -> bool {
@@ -532,7 +532,7 @@ impl Gamepad {
             self.flags.set_is_select_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_start_pushed(&mut self) -> bool {
@@ -540,7 +540,7 @@ impl Gamepad {
             self.flags.set_is_start_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_share_pushed(&mut self) -> bool {
@@ -548,7 +548,7 @@ impl Gamepad {
             self.flags.set_is_share_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 
     pub fn is_home_pushed(&mut self) -> bool {
@@ -556,6 +556,6 @@ impl Gamepad {
             self.flags.set_is_home_pushed(false);
             return true;
         }
-        return false;
+        false
     }
 }
