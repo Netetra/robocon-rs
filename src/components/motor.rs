@@ -1,5 +1,6 @@
 use core::ops::Not;
 
+use embedded_hal::{digital::OutputPin, pwm::SetDutyCycle};
 use num_enum::{FromPrimitive, IntoPrimitive};
 
 #[derive(IntoPrimitive, FromPrimitive, PartialEq)]
@@ -30,5 +31,27 @@ pub trait Motor {
         } else {
             self.ccw(duty);
         }
+    }
+}
+
+pub struct DcMotor<PWM: SetDutyCycle, DIR: OutputPin> {
+    pwm: PWM,
+    dir: DIR,
+}
+
+impl<PWM: SetDutyCycle, DIR: OutputPin> DcMotor<PWM, DIR> {
+    pub fn new(pwm: PWM, dir: DIR) -> Self {
+        Self { pwm, dir }
+    }
+}
+
+impl<PWM: SetDutyCycle, DIR: OutputPin> Motor for DcMotor<PWM, DIR> {
+    fn cw(&mut self, duty: u16) {
+        self.dir.set_low().unwrap();
+        self.pwm.set_duty_cycle(duty).unwrap();
+    }
+    fn ccw(&mut self, duty: u16) {
+        self.dir.set_high().unwrap();
+        self.pwm.set_duty_cycle(duty).unwrap();
     }
 }
