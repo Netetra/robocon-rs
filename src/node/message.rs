@@ -37,7 +37,7 @@ impl ExtendedIdExt for ExtendedId {
     }
 }
 
-type Payload<const N: usize> = Vec<u8, N>;
+pub type Payload<const N: usize> = Vec<u8, N>;
 
 #[derive(Debug)]
 pub struct Message<const N: usize> {
